@@ -139,7 +139,7 @@ function Header() {
             <li className="py-2 w-ful text-xm hover:bg-gray-300 px-6 capitalize cursor-pointer">
               customer service
             </li>
-            <li className="py-2 w-ful text-xm hover:bg-gray-300 px-6 capitalize cursor-pointer">
+            <li onClick={!session ? signIn :signOut} className="py-2 w-ful text-xm hover:bg-gray-300 px-6 capitalize cursor-pointer">
               {!session ? "Sign In" :"Sign Out"} 
             </li>
           </ul>
