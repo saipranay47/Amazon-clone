@@ -39,17 +39,17 @@ function Header() {
     <header className="relative">
       {/* sidebar */}
       <div
-        className="bg-white w-80 absolute h-screen duration-100  z-50 overflow-x-hidden overflow-y-scroll "
+        className="bg-white absolute h-screen duration-100  z-50 overflow-x-hidden overflow-y-scroll "
         style={sidebaropen ? { left: "0px" } : { left: "-500px" }}
       >
         {/* <XIcon className="absolute h-8 text-white -right-8 top-2 cursor-pointer" onClick={handleClose}/> */}
         <div className="bg-amazon_blue-light w-full h-12 flex items-center">
           <div className=" mx-4 flex items-center space-x-4 text-white font-bold">
             <UserCircleIcon className="h-8 text-white " />
-            <p>Hello, Sai</p>
+            <p>Hello, {session ? `${session.user.name}` : " "}</p>
           </div>
           <XIcon
-            className="h-8 text-white ml-28 cursor-pointer"
+            className="h-8 text-white ml-20 cursor-pointer"
             onClick={handleClose}
           />
         </div>
