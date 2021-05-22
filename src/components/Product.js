@@ -140,7 +140,7 @@ function Product({ id, title, price, description, category, image }) {
           horizontal: 'left',
         }}
         open={open}
-        autoHideDuration={60000}
+        autoHideDuration={5000}
         onClose={handleClose}
         onExited={handleExited}
         message={messageInfo ? messageInfo.message : undefined}
