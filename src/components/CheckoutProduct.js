@@ -69,7 +69,7 @@ function CheckoutProduct(props) {
                         ))}
                 </div>
                 <p className="text-xs my-2 line-clamp-3">{description}</p>
-                {quantity} × <Currency quantity={price* 103.47} currency="INR" /> ={" "}
+                <Currency quantity={price* 103.47} currency="INR" /> × {quantity}  ={" "}
                 <span className="font-bold">
                     <Currency quantity={total* 103.47} currency="INR" />
                 </span>
