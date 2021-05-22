@@ -140,7 +140,7 @@ function Header() {
               customer service
             </li>
             <li className="py-2 w-ful text-xm hover:bg-gray-300 px-6 capitalize cursor-pointer">
-              sign out
+              {!session ? "Sign In" :"Sign Out"} 
             </li>
           </ul>
           
