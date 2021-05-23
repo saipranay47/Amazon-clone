@@ -7,11 +7,32 @@ import Currency from "react-currency-formatter";
 import { useSession } from "next-auth/client";
 import { groupBy } from "lodash";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
+const stripePromise = loadStripe(process.env.stripe_public_key);
 
 function Checkout() {
     const items = useSelector(selectItems);
     const total = useSelector(selectTotal);
     const [session] = useSession();
+
+    const createcheckoutSesion = async() =>{
+        const stripe = await stripePromise;
+
+        // call backend to create check out
+        const checkoutSession = await axios.post("/api/create-checkout-session",{
+            items:items,
+            email:session.user.email,
+        });
+
+        // redirect to stripe checkout
+        const result = await stripe.redirectToCheckout({
+            sessionId:checkoutSession.data.id
+        })
+
+        if(result.error) alert(result.error.message);
+        
+    }
 
     const groupedItems = Object.values(groupBy(items, "id"));
     return (
@@ -70,11 +91,13 @@ function Checkout() {
                         <h2 className="whitespace-nowrap">
                             Subtotal ({items.length} items):{" "}
                             <span className="font-bold">
-                                <Currency quantity={total* 103.47} currency="INR" />
+                                <Currency quantity={total* 73} currency="INR" />
                             </span>
                         </h2>
 
                         <button
+                            onClick={createcheckoutSesion}
+                            role="link"
                             disabled={!session}
                             className={`button mt-2 ${
                                 !session &&

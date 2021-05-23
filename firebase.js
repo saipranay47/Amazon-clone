@@ -1,4 +1,4 @@
-import firebase from "firebase"
+import firebase from "firebase";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -8,5 +8,19 @@ const firebaseConfig = {
   storageBucket: "clone-sai.appspot.com",
   messagingSenderId: "57306071110",
   appId: "1:57306071110:web:2599b1b62644006856ca47",
-  measurementId: "G-D07BHQ16ER"
+  measurementId: "G-D07BHQ16ER",
 };
+
+const app = !firebase.apps.length
+    ? firebase.initializeApp(firebaseConfig)
+    : firebase.app();
+
+export const db = app.firestore();
+
+// no analitycs
+
+// go authentication
+// enable google
+// valid email
+// web sdk configuration
+// change .env

@@ -32,7 +32,7 @@ function Hover() {
           
           Subtotal ({items.length} items):{" "}
           <span className="font-bold">
-            <Currency quantity={total * 103.47} currency="INR" />
+            <Currency quantity={total * 73} currency="INR" />
           </span>
 
         </h2>
