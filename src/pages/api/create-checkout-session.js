@@ -29,7 +29,7 @@ export default async (req, res) => {
         payment_method_types: ["card"],
         shipping_rates: ["shr_1Iu6iBSBHfL9pzhwFC546tT0"], // Created fees in Stripe's dashboard
         shipping_address_collection: {
-            allowed_countries: ["GB", "US", "CA", "FR"], // RTFM!
+            allowed_countries: ["GB", "US", "CA", "IN"], // RTFM!
         },
         line_items: transformedItems,
         mode: "payment",

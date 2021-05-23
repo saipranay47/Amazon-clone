@@ -45,7 +45,7 @@ function Order({ id, amount, amountShipping, images, timestamp, items }) {
                                 className="h-20 object-contain sm:h-32"
                             />
                             {group.length > 1 && (
-                                <div className="absolute bottom-2 right-2 p-1 rounded shadow font-bold bg-yellow-400 text-black text-2xl text-center">
+                                <div className="absolute bottom-1 -right-8 p-1 font-bold bg-white text-black text-sm sm:text-xl text-center z-50">
                                     &times; {group.length}
                                 </div>
                             )}
