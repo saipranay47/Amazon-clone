@@ -17,10 +17,10 @@ function Order({ id, amount, amountShipping, images, timestamp, items }) {
                     <p className="text-xs font-bold">TOTAL</p>
                     <p>
                         <span className="font-bold">
-                            <Currency quantity={amount*73} currency="INR" />
+                            <Currency quantity={amount} currency="INR" />
                         </span>{" "}
                         (Including{" "}
-                        <Currency quantity={amountShipping*73} currency="INR" />{" "}
+                        <Currency quantity={amountShipping} currency="INR" />{" "}
                         for "<span className="italic">Next Day Delivery</span>")
                     </p>
                 </div>

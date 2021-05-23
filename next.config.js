@@ -4,6 +4,6 @@ module.exports ={
     },
 
     env:{
-        stripe_public_key:`${process.env.stripe_public_key}`,
+        stripe_public_key: process.env.stripe_public_key,
     }
 }
