@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Order from "../components/Order";
 import moment from "moment";
 import { useRouter } from "next/router";
+import Footer from "../components/Footer";
 
 function Orders({ orders }) {
     const [session] = useSession();
@@ -53,6 +54,7 @@ function Orders({ orders }) {
                     ))}
                 </div>
             </main>
+            <Footer/>
         </div>
     );
 }
